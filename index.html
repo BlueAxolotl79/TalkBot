@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Send to Discord Webhook</title>
+</head>
+<body>
+  <h2>Send a Message to Discord</h2>
+  <form id="webhookForm">
+    <input type="text" id="messageInput" placeholder="Type your message" required />
+    <button type="submit">Send</button>
+  </form>
+
+  <script>
+    const webhookURL = "https://discord.com/api/webhooks/1426344846662172684/hI3ovO-J6LrrH55x-cgn9WVCEsI1TGQ5-dV95MWJTlVMcIL0Ri-sjXwRrPZSatGUc0VH"; 
+    document.getElementById('webhookForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const message = document.getElementById('messageInput').value;
+
+      await fetch(webhookURL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content: message })
+      });
+
+      alert('Message sent to Discord!');
+    });
+  </script>
+</body>
+</html>
