@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Send to Discord Webhook</title>
+  <title>The Real Mizuki</title>
 </head>
 <body>
-  <h2>Send a Message to Discord</h2>
+  <h2>Mizuki Time <3/h2>
   <form id="webhookForm">
-    <input type="text" id="messageInput" placeholder="Type your message" required />
+    <input type="text" id="messageInput" placeholder="Mizuki Says......" required />
     <button type="submit">Send</button>
   </form>
 
@@ -21,10 +21,9 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ content: message })
       });
-
-      alert('Message sent to Discord!');
     });
   </script>
 </body>
 
 </html>
+
